@@ -110,8 +110,8 @@
 }
 
 .layout-catalog-grid-item {
-    height: 63px;
-    background-position: center top 6px;
+    height: var(--nitro-grid-column-min-height,unset);
+    background-position: 50%;
     background-repeat: no-repeat;
     padding: 2px;
 

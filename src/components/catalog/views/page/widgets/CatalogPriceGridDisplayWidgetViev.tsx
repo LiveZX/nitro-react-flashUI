@@ -21,7 +21,7 @@ export const CatalogPriceGridDisplayWidgetView: FC<CatalogPriceGridDisplayWidget
         <>
             { (offer.priceInCredits > 0) &&
                 <Flex alignItems="end" justifyContent="end" gap={ 1 } className="grid-price-view">
-                    <Text bold>{ (offer.priceInCredits * quantity) }</Text>
+                    <Text truncate bold>{ (offer.priceInCredits * quantity) }</Text>
                     <i className="icon icon-small-coin" />
                 </Flex> }
             { separator && (offer.priceInCredits > 0) && (offer.priceInActivityPoints > 0) &&

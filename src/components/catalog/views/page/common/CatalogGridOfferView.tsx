@@ -53,14 +53,14 @@ export const CatalogGridOfferView: FC<CatalogGridOfferViewProps> = props =>
     if(!product) return null;
 
     return (
-        <LayoutCatalogGridItem itemImage={ iconUrl } itemCount={ ((offer.pricingModel === Offer.PRICING_MODEL_MULTI) ? product.productCount : 1) } itemUniqueSoldout={ (product.uniqueLimitedItemSeriesSize && !product.uniqueLimitedItemsLeft) } itemUniqueNumber={ product.uniqueLimitedItemSeriesSize } itemActive={ itemActive } onMouseDown={ onMouseEvent } onMouseUp={ onMouseEvent } onMouseOut={ onMouseEvent } { ...rest }>
-            { (offer.product.productType === ProductTypeEnum.ROBOT) &&
+        <Column>
+            <LayoutCatalogGridItem itemImage={ iconUrl } itemCount={ ((offer.pricingModel === Offer.PRICING_MODEL_MULTI) ? product.productCount : 1) } itemUniqueSoldout={ (product.uniqueLimitedItemSeriesSize && !product.uniqueLimitedItemsLeft) } itemUniqueNumber={ product.uniqueLimitedItemSeriesSize } itemActive={ itemActive } onMouseDown={ onMouseEvent } onMouseUp={ onMouseEvent } onMouseOut={ onMouseEvent } { ...rest }>
+                { (offer.product.productType === ProductTypeEnum.ROBOT) &&
                 <LayoutAvatarImageView figure={ offer.product.extraParam } headOnly={ true } direction={ 3 } /> }
-            <Flex alignItems="end" justifyContent="end" fullWidth gap={ 0 } >
-                <Column gap={ 0 }>
-                    <CatalogPriceGridDisplayWidgetView offer={ offer } />
-                </Column>
-            </Flex>
-        </LayoutCatalogGridItem>
+            </LayoutCatalogGridItem>
+            <Column gap={ 0 }>
+                <CatalogPriceGridDisplayWidgetView offer={ offer } />
+            </Column>
+        </Column>
     );
 }

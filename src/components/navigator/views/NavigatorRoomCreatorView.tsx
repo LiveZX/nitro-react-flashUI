@@ -106,7 +106,7 @@ export const NavigatorRoomCreatorView: FC<{}> = props =>
                             </Column>
                             <Flex gap={ 2 }>
                                 <Button fullWidth className="volter-bold-button" onClick={ createRoom } disabled={ (!name || (name.length < 3)) }>{ LocalizeText('navigator.createroom.create') }</Button>
-                                <Button fullWidth className="volter-button" onClick={ event => CreateLinkEvent('navigator/close-creator') } >{ LocalizeText('cancel') }</Button>
+                                <Button className="volter-button" onClick={ event => CreateLinkEvent('navigator/close-creator') } >{ LocalizeText('cancel') }</Button>
                             </Flex>
                         </Column>
                         <Column size={ 7 } gap={ 1 } overflow="auto">
